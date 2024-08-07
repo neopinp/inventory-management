@@ -15,5 +15,5 @@ const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
+// children content is always passed below navbar 
 export default DashboardWrapper;
