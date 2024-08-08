@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <DashboardWrapper>{children}</DashboardWrapper> 
+        <DashboardWrapper>{children}</DashboardWrapper>
       </body>
     </html>
   );
@@ -26,3 +26,4 @@ export default function RootLayout({
 
 /* every page will contain the DashboardWrapper(navbar + sidebar) 
 and the main content on the current page that is wrapped around children */
+
