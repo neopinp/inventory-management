@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 *,
-*::before, 
+*::before,
 *::after {
   box-sizing: border-box;
 }
 
-html, 
+html,
 body,
-#root, 
+#root,
 .app {
   height: 100%;
   width: 100%;
@@ -19,3 +19,14 @@ body,
   @apply text-gray-900;
 }
 
+@media (min-width: 768px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 20vh);
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 7.5vh);
+  }
+}
