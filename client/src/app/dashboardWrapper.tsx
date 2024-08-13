@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect } from 'react';
-import Navbar from '@/app/(components)/Navbar';
-import Sidebar from '@/app/(components)/Sidebar';
-import StoreProvider, { useAppSelector } from './redux';
-
+import React, { useEffect } from "react";
+import Navbar from "@/app/(components)/Navbar";
+import Sidebar from "@/app/(components)/Sidebar";
+import StoreProvider, { useAppSelector } from "./redux";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const isSidebarCollapsed = useAppSelector(
@@ -30,7 +29,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <main
         className={`flex flex-col w-full h-full py-7 px-9 bg-gray-50 ${
           isSidebarCollapsed ? "md:pl-24" : "md:pl-72"
-          }`}
+        }`}
       >
         <Navbar />
         {children}
@@ -39,7 +38,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-
 const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <StoreProvider>
@@ -47,5 +45,5 @@ const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
     </StoreProvider>
   );
 };
-// children content is always passed below navbar 
+
 export default DashboardWrapper;
