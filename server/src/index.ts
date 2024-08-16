@@ -29,7 +29,7 @@ app.use(cors({
 app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
 app.use("/products", productRoutes) // http://localhost:8000/products
 app.use("/users", userRoutes) // http://localhost:8000/users
-app.use("/expenses", expenseRoutes)
+app.use("/expenses", expenseRoutes) // http://localhost:8000/expenses
 
 
 /* SERVER */
