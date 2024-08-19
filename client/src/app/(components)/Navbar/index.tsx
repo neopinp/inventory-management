@@ -5,6 +5,7 @@ import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsDarkMode, setIsSidebarCollapsed } from '@/state';
+import Image from 'next/image';
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -13,10 +14,9 @@ const Navbar = () => {
   );
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
-
   const toggleDarkMode = () => {
     dispatch(setIsDarkMode(!isDarkMode));
-  }
+  };
 
   const toggleSidebar = () => {
     dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
@@ -40,7 +40,7 @@ const Navbar = () => {
           />
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Bell className="text-gray-500" size={20} />
-          </div> 
+          </div>
         </div>
       </div>
 
@@ -51,10 +51,9 @@ const Navbar = () => {
           <div>
             <button onClick={toggleDarkMode}>
               {isDarkMode ? (
-                <Sun className="cursor-pointer text-gray-500" size={24} />                
-              ): (
+                <Sun className="cursor-pointer text-gray-500" size={24} />
+              ) : (
                 <Moon className="cursor-pointer text-gray-500" size={24} />
-
               )}
             </button>
           </div>
@@ -66,7 +65,13 @@ const Navbar = () => {
           </div>
           <hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
           <div className="flex items-center gap-3 cursor-pointer">
-            <div className="w-9 h-9">image</div>
+            <Image
+              src="https://s3-inventory-management-pi.s3.us-east-2.amazonaws.com/profile.png"
+              alt="Profile"
+              width={50}
+              height={50}
+              className="rounded-full h-full object-cover"
+            />
             <span className="font-semi bold"> Neo Pi </span>
           </div>
         </div>
